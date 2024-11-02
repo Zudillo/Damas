@@ -6,14 +6,14 @@ public enum Direccion {
     SURESTE("Sureste"),
     SUROESTE("Suroeste");
 
-    private String cadenaAMostrar;
+    private String direccionDama;
 
     Direccion(String cadenaAMostrar) {
-        this.cadenaAMostrar = cadenaAMostrar;
+        this.direccionDama = direccionDama;
     }
 
     @Override
     public String toString() {
-        return "Direccion{" + "cadenaAMostrar='" + cadenaAMostrar + '\'' + '}';
+        return "Direccion{" + "Direccion Dama='" + direccionDama + '\'' + '}';
     }
 }
