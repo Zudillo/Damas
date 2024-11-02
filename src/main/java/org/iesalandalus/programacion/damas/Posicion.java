@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas;
 
+import java.util.Objects;
+
 public class Posicion {
     int fila;
     char columna;
@@ -34,5 +36,23 @@ public class Posicion {
             throw new IllegalArgumentException("La fila debe estar entre 1 y 8");
         }
             this.fila = fila;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Posicion posicion = (Posicion) o;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
+    }
+
+    @Override
+    public String toString() {
+        return "Posicion{" + "fila=" + fila +", columna=" + columna + '}';
     }
 }
