@@ -12,8 +12,8 @@ public class Posicion {
     }
 
     public Posicion (Posicion posicion) {
-        this.fila = setFila(fila);
-        this.columna = setColumna(columna);
+        this.fila = Posicion.setFila(fila);
+        this.columna = Posicion.setColumna(columna);
     }
 
     public char getColumna() {

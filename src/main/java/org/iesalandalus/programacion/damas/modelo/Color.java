@@ -4,7 +4,7 @@ public enum Color {
     BLANCO("Blanco"),
     NEGRO("Negro");
 
-    private String colorDama;
+    private final String colorDama;
 
     Color(String colorDama) {
         this.colorDama = colorDama;
