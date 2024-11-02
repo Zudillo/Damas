@@ -8,6 +8,12 @@ public class Dama {
     Posicion inicial;
     boolean esDamaEspecial;
 
+    public Dama(Color color, Posicion inicial, boolean esDamaEspecial) {
+        this.color = color;
+        this.inicial = inicial;
+        this.esDamaEspecial = esDamaEspecial;
+    }
+
     public Color getColor() {
         return color;
     }

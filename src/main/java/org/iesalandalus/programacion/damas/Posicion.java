@@ -7,13 +7,13 @@ public class Posicion {
     char columna;
 
     public Posicion(int fila, char columna) {
-        setFila(fila);
-        setColumna(columna);
+        this.fila = fila;
+        this.columna = columna;
     }
 
-    public Posicion (Posicion posicion) {
-        this.fila = Posicion.setFila(fila);
-        this.columna = Posicion.setColumna(columna);
+    public Posicion(Posicion posicion) {
+        this.fila = posicion.fila;
+        this.columna = posicion.columna;
     }
 
     public char getColumna() {
@@ -21,7 +21,7 @@ public class Posicion {
     }
 
     public void setColumna(char columna) {
-        if (columna < a || columna > h) {
+        if (columna < 'a' || columna > 'h') {
             throw new IllegalArgumentException("La columna debe estar entre a y h");
         }
             this.columna = columna;
