@@ -5,8 +5,13 @@ public class Posicion {
     char columna;
 
     public Posicion(int fila, char columna) {
-        this.fila = fila;
-        this.columna = columna;
+        setFila(fila);
+        setColumna(columna);
+    }
+
+    public Posicion (Posicion posicion) {
+        this.fila = setFila(fila);
+        this.columna = setColumna(columna);
     }
 
     public char getColumna() {
