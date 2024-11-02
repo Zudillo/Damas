@@ -6,7 +6,7 @@ public enum Direccion {
     SURESTE("Sureste"),
     SUROESTE("Suroeste");
 
-    private String direccionDama;
+    private final String direccionDama;
 
     Direccion(String direccionDama) {
         this.direccionDama = direccionDama;

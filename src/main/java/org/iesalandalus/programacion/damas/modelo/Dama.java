@@ -5,12 +5,12 @@ import org.iesalandalus.programacion.damas.Posicion;
 public class Dama {
 
     Color color;
-    Posicion inicial;
+    Posicion posicion;
     boolean esDamaEspecial;
 
     public Dama(Color color, Posicion inicial, boolean esDamaEspecial) {
         this.color = color;
-        this.inicial = inicial;
+        this.posicion = inicial;
         this.esDamaEspecial = esDamaEspecial;
     }
 
@@ -23,11 +23,11 @@ public class Dama {
     }
 
     public Posicion getInicial() {
-        return inicial;
+        return posicion;
     }
 
     public void setInicial(Posicion inicial) {
-        this.inicial = inicial;
+        this.posicion = inicial;
     }
 
     public boolean isEsDamaEspecial() {
