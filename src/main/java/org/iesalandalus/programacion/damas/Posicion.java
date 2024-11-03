@@ -6,14 +6,17 @@ public class Posicion {
     private int fila;
     private char columna;
 
-    public Posicion(int fila, char columna) {
-        this.fila = fila;
-        this.columna = columna;
+    public Posicion() {
+        setFila(fila);
+        setColumna(columna);
     }
 
-    public Posicion(Posicion posicion) {
-        this.fila = posicion.fila;
-        this.columna = posicion.columna;
+    public Posicion(Posicion nuevaPosicion) {
+        if (nuevaPosicion == null) {
+            throw new IllegalArgumentException("Error: la posición no puede ser nula.");
+        }
+        this.fila = nuevaPosicion.fila;
+        this.columna = nuevaPosicion.columna;
     }
 
     public char getColumna() {

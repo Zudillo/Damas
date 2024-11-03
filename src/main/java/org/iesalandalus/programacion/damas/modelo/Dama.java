@@ -8,25 +8,34 @@ public class Dama {
     private Posicion posicion;
     private boolean esDamaEspecial;
 
-    public Dama(Color color, Posicion inicial, boolean esDamaEspecial) {
-        color = Color.BLANCO;
-        posicion = new Posicion(1, 'a');
+    public Dama() {
+        setColor(Color.BLANCO);
+        setPosicion(getPosicion());
+        setEsDamaEspecial(false);
     }
+
+
 
     public Color getColor() {
         return color;
     }
 
     public void setColor(Color color) {
+        if (color != Color.BLANCO || color != Color.NEGRO) {
+            throw new IllegalArgumentException("Error: no es un color válido.");
+        }
         this.color = color;
     }
 
-    public Posicion getInicial() {
+    public Posicion getPosicion() {
         return posicion;
     }
 
-    public void setInicial(Posicion inicial) {
-        this.posicion = inicial;
+    public void setPosicion(Posicion posicion) {
+        if (posicion < 1 || posicion > 8 || posicion < 'a' || posicion > 'h') {
+            throw new IllegalArgumentException("Error: no es una posición válida.");
+        }
+        this.posicion = posicion;
     }
 
     public boolean isEsDamaEspecial() {
