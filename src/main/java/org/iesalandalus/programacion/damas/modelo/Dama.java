@@ -80,17 +80,9 @@ public class Dama {
         if (esDamaEspecial == false) {
             movimiento = 1;
             if (color == Color.BLANCO && (direccion == Direccion.SURESTE || direccion == Direccion.SUROESTE)) {
-                try {
-                    throw new OperationNotSupportedException("Error: esta dama no puede mover hacia atrás");
-                } catch (OperationNotSupportedException e) {
-                    throw new RuntimeException(e);
-                }
+                throw new IllegalArgumentException("Error: esta dama no puede mover hacia atrás.");
             } else if (color == Color.NEGRO && (direccion == Direccion.NORESTE || direccion == Direccion.NOROESTE)) {
-                try {
-                    throw new OperationNotSupportedException("Error: esta dama no puede mover hacia atrás");
-                } catch (OperationNotSupportedException e) {
-                    throw new RuntimeException(e);
-                }
+                throw new IllegalArgumentException("Error: esta dama no puede mover hacia atrás.");
             }
         }
         return getPosicion();
