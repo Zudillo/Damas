@@ -6,12 +6,9 @@ public enum Color {
 
     private final String colorDama;
 
-    Color(String colorDama) {
-        this.colorDama = colorDama;
-    }
+    Color(String colorDama) {this.colorDama = colorDama;}
 
     @Override
-    public String toString() {
-        return "Color{" + "Color Dama='" + colorDama + '\'' + '}';
-    }
+    public String toString() {return "Color{" + "Color Dama='" + colorDama + '\'' + '}';}
+
 }

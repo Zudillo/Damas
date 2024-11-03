@@ -8,12 +8,8 @@ public enum Direccion {
 
     private final String direccionDama;
 
-    Direccion(String direccionDama) {
-        this.direccionDama = direccionDama;
-    }
+    Direccion(String direccionDama) {this.direccionDama = direccionDama;}
 
     @Override
-    public String toString() {
-        return "Direccion{" + "Direccion Dama='" + direccionDama + '\'' + '}';
-    }
+    public String toString() {return "Direccion{" + "Direccion Dama='" + direccionDama + '\'' + '}';}
 }
