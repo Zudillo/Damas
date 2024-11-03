@@ -4,11 +4,11 @@ public enum Color {
     BLANCO("Blanco"),
     NEGRO("Negro");
 
-    private final String colorDama;
+    private final String cadenaAMostrar;
 
-    Color(String colorDama) {this.colorDama = colorDama;}
+    Color(String cadenaAMostrar) {this.cadenaAMostrar = cadenaAMostrar;}
 
     @Override
-    public String toString() {return "Color{" + "Color Dama='" + colorDama + '\'' + '}';}
+    public String toString() {return "Color{" + "cadenaAMostrar='" + cadenaAMostrar + '\'' + '}';}
 
 }

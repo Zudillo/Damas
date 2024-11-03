@@ -2,6 +2,8 @@ package org.iesalandalus.programacion.damas.modelo;
 
 import org.iesalandalus.programacion.damas.Posicion;
 
+import java.util.Random;
+
 public class Dama {
 
     private Color color;
@@ -10,10 +12,22 @@ public class Dama {
 
     public Dama() {
         setColor(Color.BLANCO);
+    }
+
+    public Dama(Color color, Posicion posicion, boolean esDamaEspecial) {
+        setColor(color);
         setPosicion(getPosicion());
         setEsDamaEspecial(false);
     }
 
+    private Posicion crearPosicionInicial() {
+        return getPosicion();
+    }
+
+    private Posicion mover(Direccion direccion) {
+
+        return getPosicion();
+    }
 
 
     public Color getColor() {
@@ -21,7 +35,7 @@ public class Dama {
     }
 
     public void setColor(Color color) {
-        if (color != Color.BLANCO || color != Color.NEGRO) {
+        if (color == null) {
             throw new IllegalArgumentException("Error: no es un color válido.");
         }
         this.color = color;
@@ -32,7 +46,7 @@ public class Dama {
     }
 
     public void setPosicion(Posicion posicion) {
-        if (posicion < 1 || posicion > 8 || posicion < 'a' || posicion > 'h') {
+        if (posicion == null) {
             throw new IllegalArgumentException("Error: no es una posición válida.");
         }
         this.posicion = posicion;
