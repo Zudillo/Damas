@@ -70,20 +70,33 @@ public class Dama {
         return getPosicion();
     }
 
-    private Posicion mover(Direccion direccion, int movimiento) {
+    private Posicion mover(Direccion direccion, int movimiento, int nuevaFila, int nuevaColumna) {
         if (direccion == null) {
             throw new NullPointerException("Error: la dirección no puede ser nula");
         }
         if (movimiento < 1) {
             throw new IllegalArgumentException("Error: debes realizar un movimiento.");
         }
-        if (esDamaEspecial == false) {
+        if (!esDamaEspecial) {
             movimiento = 1;
             if (color == Color.BLANCO && (direccion == Direccion.SURESTE || direccion == Direccion.SUROESTE)) {
                 throw new IllegalArgumentException("Error: esta dama no puede mover hacia atrás.");
             } else if (color == Color.NEGRO && (direccion == Direccion.NORESTE || direccion == Direccion.NOROESTE)) {
                 throw new IllegalArgumentException("Error: esta dama no puede mover hacia atrás.");
             }
+        }
+        nuevaFila = posicion.getFila();
+        nuevaColumna = posicion.getColumna();
+        if (color == Color.BLANCO && (direccion == Direccion.NORESTE || direccion == Direccion.NOROESTE)) {
+            nuevaFila += movimiento;
+            nuevaColumna += movimiento;
+        }
+        else if (color == Color.NEGRO && (direccion == Direccion.SURESTE || direccion == Direccion.SUROESTE)) {
+            nuevaFila += movimiento;
+            nuevaColumna += movimiento;
+        }
+        else {
+            throw new IllegalArgumentException("Error: dirección no válida");
         }
         return getPosicion();
     }
