@@ -2,6 +2,7 @@ package org.iesalandalus.programacion.damas.modelo;
 
 import org.iesalandalus.programacion.damas.Posicion;
 
+import javax.naming.OperationNotSupportedException;
 import java.util.Random;
 
 public class Dama {
@@ -20,10 +21,8 @@ public class Dama {
         setEsDamaEspecial(false);
     }
 
-    private Posicion crearPosicionInicial() {
+    private Posicion crearPosicionInicial(int fila, int columna, int columnaAleatoria) {
         Random random = new Random();
-        int fila;
-        int columna, columnaAleatoria;
         if (color == Color.BLANCO) {
             fila = random.nextInt(1,3);
         }
@@ -71,9 +70,28 @@ public class Dama {
         return getPosicion();
     }
 
-    private Posicion mover(Direccion direccion) {
+    private Posicion mover(Direccion direccion, int movimiento) {
         if (direccion == null) {
             throw new NullPointerException("Error: la dirección no puede ser nula");
+        }
+        if (movimiento < 1) {
+            throw new IllegalArgumentException("Error: debes realizar un movimiento.");
+        }
+        if (esDamaEspecial == false) {
+            movimiento = 1;
+            if (color == Color.BLANCO && (direccion == Direccion.SURESTE || direccion == Direccion.SUROESTE)) {
+                try {
+                    throw new OperationNotSupportedException("Error: esta dama no puede mover hacia atrás");
+                } catch (OperationNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (color == Color.NEGRO && (direccion == Direccion.NORESTE || direccion == Direccion.NOROESTE)) {
+                try {
+                    throw new OperationNotSupportedException("Error: esta dama no puede mover hacia atrás");
+                } catch (OperationNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
         return getPosicion();
     }
