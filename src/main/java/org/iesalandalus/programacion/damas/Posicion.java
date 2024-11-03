@@ -11,12 +11,12 @@ public class Posicion {
         setColumna(columna);
     }
 
-    public Posicion(Posicion nuevaPosicion) {
-        if (nuevaPosicion == null) {
+    public Posicion(Posicion p) {
+        if (p == null) {
             throw new IllegalArgumentException("Error: la posición no puede ser nula.");
         }
-        this.fila = nuevaPosicion.fila;
-        this.columna = nuevaPosicion.columna;
+        this.fila = p.fila;
+        this.columna = p.columna;
     }
 
     public char getColumna() {

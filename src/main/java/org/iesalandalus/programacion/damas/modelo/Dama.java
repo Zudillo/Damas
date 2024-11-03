@@ -70,7 +70,7 @@ public class Dama {
         return getPosicion();
     }
 
-    private Posicion mover(Direccion direccion, int movimiento, int nuevaFila, int nuevaColumna) {
+    private Posicion mover (Direccion direccion, int movimiento, int nuevaFila, int nuevaColumna) throws OperationNotSupportedException {
         if (direccion == null) {
             throw new NullPointerException("Error: la dirección no puede ser nula");
         }
@@ -98,9 +98,15 @@ public class Dama {
         else {
             throw new IllegalArgumentException("Error: dirección no válida");
         }
+        if (nuevaFila < 1 || nuevaFila > 8 || nuevaColumna < 'a' || nuevaColumna > 'h') {
+            throw new OperationNotSupportedException("Error: la ficha no puede salir del tablero");
+        }
+
+
         return getPosicion();
     }
 
+    posicion = new Posicion(nuevaFila, nuevaColumna);
 
     public Color getColor() {
         return color;
