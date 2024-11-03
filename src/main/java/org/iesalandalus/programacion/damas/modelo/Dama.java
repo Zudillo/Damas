@@ -4,14 +4,13 @@ import org.iesalandalus.programacion.damas.Posicion;
 
 public class Dama {
 
-    Color color;
-    Posicion posicion;
-    boolean esDamaEspecial;
+    private Color color;
+    private Posicion posicion;
+    private boolean esDamaEspecial;
 
     public Dama(Color color, Posicion inicial, boolean esDamaEspecial) {
-        this.color = color;
-        this.posicion = inicial;
-        this.esDamaEspecial = esDamaEspecial;
+        color = Color.BLANCO;
+        posicion = new Posicion(1, 'a');
     }
 
     public Color getColor() {

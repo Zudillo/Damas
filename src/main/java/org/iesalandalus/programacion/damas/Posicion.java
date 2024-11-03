@@ -3,8 +3,8 @@ package org.iesalandalus.programacion.damas;
 import java.util.Objects;
 
 public class Posicion {
-    int fila;
-    char columna;
+    private int fila;
+    private char columna;
 
     public Posicion(int fila, char columna) {
         this.fila = fila;
