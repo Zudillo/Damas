@@ -23,12 +23,51 @@ public class Dama {
     private Posicion crearPosicionInicial() {
         Random random = new Random();
         int fila;
+        int columna, columnaAleatoria;
         if (color == Color.BLANCO) {
             fila = random.nextInt(1,3);
         }
         else {
             fila = random.nextInt(6, 8);
         }
+
+        columnaAleatoria = random.nextInt(1, 4);
+
+        if (fila % 2 == 0) {
+            switch (columnaAleatoria) {
+                case 1:
+                    columna = 'a';
+                    break;
+                case 2:
+                    columna = 'c';
+                    break;
+                case 3:
+                    columna = 'e';
+                    break;
+                case 4:
+                    columna = 'g';
+                    break;
+                default:
+            }
+        }
+        else {
+            switch (columnaAleatoria) {
+                case 1:
+                    columna = 'b';
+                    break;
+                case 2:
+                    columna = 'd';
+                    break;
+                case 3:
+                    columna = 'f';
+                    break;
+                case 4:
+                    columna = 'h';
+                    break;
+                default:
+            }
+        }
+
         return getPosicion();
     }
 
