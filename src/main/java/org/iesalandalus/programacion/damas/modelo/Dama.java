@@ -21,11 +21,21 @@ public class Dama {
     }
 
     private Posicion crearPosicionInicial() {
+        Random random = new Random();
+        int fila;
+        if (color == Color.BLANCO) {
+            fila = random.nextInt(1,3);
+        }
+        else {
+            fila = random.nextInt(6, 8);
+        }
         return getPosicion();
     }
 
     private Posicion mover(Direccion direccion) {
-
+        if (direccion == null) {
+            throw new NullPointerException("Error: la dirección no puede ser nula");
+        }
         return getPosicion();
     }
 
