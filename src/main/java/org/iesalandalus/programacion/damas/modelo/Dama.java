@@ -70,7 +70,7 @@ public class Dama {
         return getPosicion();
     }
 
-    private Posicion mover (Direccion direccion, int movimiento, int nuevaFila, int nuevaColumna) throws OperationNotSupportedException {
+    private Posicion mover (Direccion direccion, int movimiento, int nuevaFila, char nuevaColumna) throws OperationNotSupportedException {
         if (direccion == null) {
             throw new NullPointerException("Error: la dirección no puede ser nula");
         }
@@ -102,11 +102,15 @@ public class Dama {
             throw new OperationNotSupportedException("Error: la ficha no puede salir del tablero");
         }
 
+        posicion.setFila(nuevaFila);
+        posicion.setColumna(nuevaColumna);
+
+        if ((color == Color.BLANCO && nuevaFila == 8) || (color == Color.NEGRO && nuevaColumna == 1)) {
+            esDamaEspecial = true;
+        }
 
         return getPosicion();
     }
-
-    posicion = new Posicion(nuevaFila, nuevaColumna);
 
     public Color getColor() {
         return color;
@@ -136,5 +140,10 @@ public class Dama {
 
     public void setEsDamaEspecial(boolean esDamaEspecial) {
         this.esDamaEspecial = esDamaEspecial;
+    }
+
+    @Override
+    public String toString() {
+        return "Dama{" + "color=" + color +", posicion=" + posicion +", esDamaEspecial=" + esDamaEspecial +'}';
     }
 }
