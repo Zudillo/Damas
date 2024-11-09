@@ -11,12 +11,14 @@ public class Dama {
 
     public Dama() {
         setColor(Color.BLANCO);
+        setPosicion(posicion);
+        setEsDamaEspecial(false);
     }
 
     public Dama(Color color, Posicion posicion, boolean esDamaEspecial) {
         setColor(color);
         setPosicion(getPosicion());
-        setEsDamaEspecial(false);
+        setEsDamaEspecial(esDamaEspecial);
     }
 
     private Posicion crearPosicionInicial(int fila, int columna, int columnaAleatoria) {
