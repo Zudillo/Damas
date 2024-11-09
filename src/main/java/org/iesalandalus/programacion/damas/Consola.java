@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.damas;
 
 
+import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -37,7 +38,12 @@ public class Consola {
             if (opcion != 1 && opcion != 2)
                 System.out.println("Error: opción inválida.");
         } while (opcion != 1 && opcion != 2);
-        return opcion;
+        if (opcion == 1) {
+            return Color.BLANCO;
+        }
+        else {
+            return Color.NEGRO;
+        }
     }
 
     public static void mostrarMenuDirecciones () {
