@@ -16,12 +16,27 @@ public class Consola {
         System.out.println("4. Salir.");
     }
 
-    public static int elegirOpcion() {
+    public static int elegirOpcionMenu() {
         int opcion;
         do {
             System.out.println("Elige una opción.");
             opcion = Entrada.entero();
+            if (opcion != 1 && opcion != 2)
+                System.out.println("Error: opción inválida.");
         } while (opcion < 1 || opcion > 4);
+        return opcion;
+    }
+
+    public static int Color int elegirOpcion() {
+        int opcion;
+        do {
+            System.out.println("Elige un color:");
+            System.out.println("1. Blanco.");
+            System.out.println("2. Negro.");
+            opcion = Entrada.entero();
+            if (opcion != 1 && opcion != 2)
+                System.out.println("Error: opción inválida.");
+        } while (opcion != 1 && opcion != 2);
         return opcion;
     }
 
