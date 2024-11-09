@@ -1,7 +1,5 @@
 package org.iesalandalus.programacion.damas.modelo;
 
-import org.iesalandalus.programacion.damas.Posicion;
-
 import javax.naming.OperationNotSupportedException;
 import java.util.Random;
 
