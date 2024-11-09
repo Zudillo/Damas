@@ -27,7 +27,7 @@ public class Consola {
         return opcion;
     }
 
-    public static int Color int elegirOpcion() {
+    public static Color elegirOpcion() {
         int opcion;
         do {
             System.out.println("Elige un color:");
