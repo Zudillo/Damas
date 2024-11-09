@@ -40,4 +40,16 @@ public class Consola {
         return opcion;
     }
 
+    public static void mostrarMenuDirecciones () {
+        System.out.println("Elige una dirección:");
+        System.out.println("1. Noreste.");
+        System.out.println("2. Noroeste.");
+        System.out.println("3. Sureste.");
+        System.out.println("4. Suroeste.");
+    }
+
+    public static int elegirDireccion() {
+
+    }
+
 }
