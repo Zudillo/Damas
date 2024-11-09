@@ -59,4 +59,19 @@ public class Consola {
         return opcion;
     }
 
+    public static int elegirPasos() {
+        int pasos;
+        do {
+            System.out.println("Introduce el número de pasos.");
+            pasos = Entrada.entero();
+            if (pasos < 1)
+                System.out.println("Error: número de pasos incorrecto.");
+        } while (pasos < 1);
+        return pasos;
+    }
+
+    public static void despedirse() {
+        System.out.println("Saliendo de la aplicación. ¡Hasta pronto!");
+    }
+
 }
