@@ -15,7 +15,7 @@ public class Dama {
         setEsDamaEspecial(false);
     }
 
-    public Dama(Color color, Posicion posicion, boolean esDamaEspecial) {
+    public Dama(Color color) {
         setColor(color);
         setPosicion(getPosicion());
         setEsDamaEspecial(esDamaEspecial);
