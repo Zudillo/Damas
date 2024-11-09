@@ -21,7 +21,7 @@ public class Consola {
         do {
             System.out.println("Elige una opción.");
             opcion = Entrada.entero();
-            if (opcion != 1 && opcion != 2)
+            if (opcion < 1 || opcion > 4)
                 System.out.println("Error: opción inválida.");
         } while (opcion < 1 || opcion > 4);
         return opcion;
@@ -49,7 +49,14 @@ public class Consola {
     }
 
     public static int elegirDireccion() {
-
+        int opcion;
+        do {
+            System.out.println("Elige una opción.");
+            opcion = Entrada.entero();
+            if (opcion < 1 || opcion > 4)
+                System.out.println("Error: opción inválida.");
+        } while (opcion < 1 || opcion > 4);
+        return opcion;
     }
 
 }
