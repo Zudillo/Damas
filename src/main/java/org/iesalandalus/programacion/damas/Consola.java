@@ -2,6 +2,7 @@ package org.iesalandalus.programacion.damas;
 
 
 import org.iesalandalus.programacion.damas.modelo.Color;
+import org.iesalandalus.programacion.damas.modelo.Dama;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -12,7 +13,7 @@ public class Consola {
     public static void mostrarMenu() {
         System.out.println("Menú de opciones:");
         System.out.println("1. Crear dama por defecto.");
-        System.out.println("2. Crear dama eligiendo color." );
+        System.out.println("2. Crear dama eligiendo color.");
         System.out.println("3. Mover.");
         System.out.println("4. Salir.");
     }
@@ -29,21 +30,22 @@ public class Consola {
     }
 
     public static Color elegirOpcion() {
-        int opcion;
+        Color color = null;
         do {
             System.out.println("Elige un color:");
             System.out.println("1. Blanco.");
             System.out.println("2. Negro.");
-            opcion = Entrada.entero();
-            if (opcion != 1 && opcion != 2)
+            int opcion = Entrada.entero();
+            if (opcion != 1 && opcion != 2) {
                 System.out.println("Error: opción inválida.");
-        } while (opcion != 1 && opcion != 2);
-        if (opcion == 1) {
-            return Color.BLANCO;
-        }
-        else {
-            return Color.NEGRO;
-        }
+            } else if (opcion == 1) {
+                color = Color.BLANCO;
+            }
+            else {
+                color = Color.NEGRO;
+            }
+        } while (color == null);
+        return color;
     }
 
     public static void mostrarMenuDirecciones () {

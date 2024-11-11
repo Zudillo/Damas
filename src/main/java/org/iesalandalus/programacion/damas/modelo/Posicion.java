@@ -3,10 +3,10 @@ package org.iesalandalus.programacion.damas.modelo;
 import java.util.Objects;
 
 public class Posicion {
-    private int fila;
-    private char columna;
+    int fila;
+    char columna;
 
-    public Posicion() {
+    public Posicion(int fila, char columna) {
         setFila(fila);
         setColumna(columna);
     }
@@ -15,8 +15,8 @@ public class Posicion {
         if (p == null) {
             throw new IllegalArgumentException("Error: la posición no puede ser nula.");
         }
-        this.fila = p.fila;
-        this.columna = p.columna;
+        setFila(p.getFila());
+        setColumna(p.getColumna());
     }
 
     public char getColumna() {
@@ -24,8 +24,8 @@ public class Posicion {
     }
 
     public void setColumna(char columna) {
-        if (columna < 'a' || columna > 'h') {
-            throw new IllegalArgumentException("La columna debe estar entre a y h");
+        if (columna < 'A' || columna > 'H') {
+            throw new IllegalArgumentException("La columna debe estar entre A y H");
         }
             this.columna = columna;
     }
@@ -56,6 +56,6 @@ public class Posicion {
 
     @Override
     public String toString() {
-        return "Posicion{" + "fila=" + fila +", columna=" + columna + '}';
+        return "está en la fila " + fila +", columna " + columna;
     }
 }

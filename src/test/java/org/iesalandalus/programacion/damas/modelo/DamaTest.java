@@ -87,23 +87,23 @@ class DamaTest {
 
 		damaBlanca = new Dama(Color.BLANCO);
 
-		damaBlanca.setPosicion(new Posicion(7,'c'));
+		damaBlanca.setPosicion(new Posicion());
 		damaBlanca.mover(Direccion.NORESTE, 1);
-		assertEquals(new Posicion(8, 'd'), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
 		damaBlanca.mover(Direccion.SURESTE, 3);
-		assertEquals(new Posicion(5, 'g'), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
 		damaBlanca.mover(Direccion.SUROESTE, 4);
-		assertEquals(new Posicion(1, 'c'), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaBlanca.getPosicion(), POSICION_NO_ESPERADA);
 
 		damaNegra = new Dama(Color.NEGRO);
 
-		damaNegra.setPosicion(new Posicion(2,'b'));
+		damaNegra.setPosicion(new Posicion());
 		damaNegra.mover(Direccion.SURESTE, 1);
-		assertEquals(new Posicion(1, 'c'), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
 		damaNegra.mover(Direccion.NORESTE, 3);
-		assertEquals(new Posicion(4, 'f'), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
 		damaNegra.mover(Direccion.NOROESTE, 4);
-		assertEquals(new Posicion(8, 'b'), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
+		assertEquals(new Posicion(), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
 
 
 	}

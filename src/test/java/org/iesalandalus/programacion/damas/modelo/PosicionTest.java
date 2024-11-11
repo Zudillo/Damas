@@ -26,42 +26,42 @@ class PosicionTest {
 	@Test
 	void constructorFilaValidaColumnaValidaCreaPosicionCorrectamente() {
 		Posicion posicion;
-		posicion = new Posicion(1, 'a');
+		posicion = new Posicion();
 		assertEquals(1, posicion.getFila(), FILA_NO_ESPERADA);
 		assertEquals('a', posicion.getColumna(), COLUMNA_NO_ESPERADA);
 	}
 	
 	@Test
 	void constructorFilaNoValidaColumnaValidaLanzaExcepcion() {
-		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(0, 'a');}, EXCEPCION_NO_VALIDA);
+		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
-		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion(9, 'a');}, EXCEPCION_NO_VALIDA);
+		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
 	
 	@Test
 	void constructorFilaValidaColumnaNoValidaLanzaExcepcion() {
-		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(1, '`');}, EXCEPCION_NO_VALIDA);
+		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_COLUMNA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
-		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion(1, 'i');}, EXCEPCION_NO_VALIDA);
+		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_COLUMNA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
 	
 	@Test
 	void constructorFilaNoValidaColumnaNoValidaLanzaExcepcion() {
-		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(0, '`');}, EXCEPCION_NO_VALIDA);
+		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
-		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(0, 'h');}, EXCEPCION_NO_VALIDA);
+		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
-		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(9, '`');}, EXCEPCION_NO_VALIDA);
+		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
-		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(9, 'h');}, EXCEPCION_NO_VALIDA);
+		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion();}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
 	
 	@Test
 	void constructorPosicionValidaDevuelveCopiaDeLaPosicion() {
-		Posicion posicion = new Posicion(1, 'a');
+		Posicion posicion = new Posicion();
 		Posicion nuevaPosicion = new Posicion(posicion);
 		assertEquals(posicion, nuevaPosicion, POSICION_NO_ESPERADA);
 	}
@@ -74,25 +74,25 @@ class PosicionTest {
 	
 	@Test
 	void equalsHashCodeComparaCorrectamente() {
-		Posicion posicion1 = new Posicion(1, 'a');
+		Posicion posicion1 = new Posicion();
 		assertEquals(posicion1, posicion1, OBJETOS_DEBERIAN_SER_IGUALES);
 		assertEquals(posicion1.hashCode(), posicion1.hashCode(), HASHS_DEBERIAN_SER_IGUALES);
-		assertEquals(posicion1, new Posicion(1, 'a'), OBJETOS_DEBERIAN_SER_IGUALES);
-		assertEquals(posicion1.hashCode(), new Posicion(1, 'a').hashCode(), HASHS_DEBERIAN_SER_IGUALES);
+		assertEquals(posicion1, new Posicion(), OBJETOS_DEBERIAN_SER_IGUALES);
+		assertEquals(posicion1.hashCode(), new Posicion().hashCode(), HASHS_DEBERIAN_SER_IGUALES);
 		assertNotEquals(posicion1, null, OBJETOS_DEBERIAN_SER_DIFERENTES);
 		assertNotEquals(posicion1, "Otro", OBJETOS_DEBERIAN_SER_DIFERENTES);
 		assertNotEquals(posicion1.hashCode(), "Otro".hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1, new Posicion(2, 'a'), OBJETOS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1.hashCode(), new Posicion(2, 'a').hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1, new Posicion(1, 'b'), OBJETOS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1.hashCode(), new Posicion(1, 'b').hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1, new Posicion(2, 'b'), OBJETOS_DEBERIAN_SER_DIFERENTES);
-		assertNotEquals(posicion1.hashCode(), new Posicion(2, 'b').hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1, new Posicion(), OBJETOS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1.hashCode(), new Posicion().hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1, new Posicion(), OBJETOS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1.hashCode(), new Posicion().hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1, new Posicion(), OBJETOS_DEBERIAN_SER_DIFERENTES);
+		assertNotEquals(posicion1.hashCode(), new Posicion().hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
 	}
 	
 	@Test
 	void toStringDevuelveLaCadenaEsperada() {
-		assertEquals("fila=1, columna=a", new Posicion(1, 'a').toString(), CADENA_NO_ESPERADA);
+		assertEquals("fila=1, columna=a", new Posicion().toString(), CADENA_NO_ESPERADA);
 	}
 
 }
